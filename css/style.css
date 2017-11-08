@@ -1,12 +1,8 @@
 * {
   font-family: 'Inconsolata', monospace; }
 
-table, th, td {
-  border: 1px solid black; }
-
 h1 {
   height: 200px;
-  vertical-align: middle;
-  background-image: url(../ressources/images/les-carnets-de-paul-marius-bloc-note-calepin-cuir-paul-marius-8.jpg); }
+  vertical-align: middle; }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,9 +2,7 @@
 
 //lien vers la base de données
 
-$dsn = 'mysql:dbname=to_do_list;host=localhost';
-$user = 'root';
-$password = 'root';
+require '../config.php';
 
 try
 {
@@ -17,11 +15,12 @@ try
 if (isset($_POST["submit"])) {
     
     try {
-        $sql = 'INSERT INTO Tache (labeltache, description) VALUES (:nomtache, :dotache)';
+        $sql = 'INSERT INTO Tache (labeltache, description, user_id) VALUES (:nomtache, :dotache, :userid)';
         $statement = $pdo->prepare($sql);
         
         $statement->bindParam(':nomtache', $_POST['nom']);
         $statement->bindParam(':dotache', $_POST['descriptiontache']);
+        $statement->bindParam(':userid', $_POST['userid']);
         
             if ($statement->execute() === TRUE) {
             echo "Tâche ajoutée !";

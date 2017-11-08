@@ -2,11 +2,9 @@
 
 //lien vers la base de données
 
-$dsn = 'mysql:dbname=to_do_list;host=localhost';
-$user = 'root';
-$password = 'root';
+require '../config.php';
 
-// on définit la variable $id depuis l'"id" récupérée sur la page mode/edit.php
+// on définit la variable $id avec l'id récupérée dans view/browse.php
 $id = $_GET["id"];
 
 try

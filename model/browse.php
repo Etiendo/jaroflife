@@ -1,9 +1,9 @@
 <?php
 
-function getTasks() { // On définie une fonction qui sera égal à la variable $to_do_list dans le index.php
-$dsn = 'mysql:dbname=to_do_list;host=localhost';
-$user = 'root';
-$password = 'root';
+function getTasks() { // On définie une fonction qui sera égale à la variable $to_do_list dans le index.php
+
+    require '../config.php';
+    
 // Définition des paramètres de la BDD
 
 try
@@ -13,7 +13,7 @@ try
     } catch (PDOException $e) {
       echo 'Connexion échouée : ' . $e->getMessage();   
 }
-        //Requête SQL avec un retour si bien effectué
+        //Requête SQL
         $sql = 'SELECT * FROM Tache';
         $statement = $pdo->prepare($sql);
         
