@@ -4,14 +4,14 @@
 <head>
     <meta charset=utf-8>
     <title>To do-list</title>
-     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 
 <body>
 
-    <form action="../model/add.php" method="post">
+    <form action="../controleur/add.php" method="post">
         <p>Nom tâche <input type="text" name="nom" /></p>
         <p>Description tâche <input type="text" name="descriptiontache" /></p>
         <p>Utilisateur <input type="text" name="userid" /></p>

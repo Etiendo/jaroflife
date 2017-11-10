@@ -1,8 +1,14 @@
 * {
   font-family: 'Inconsolata', monospace; }
 
-h1 {
+.espace_perso {
   height: 200px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  margin: 20px; }
+
+.accueil {
+  height: 200px;
+  vertical-align: middle;
+  margin: 20px; }
 
 /*# sourceMappingURL=style.css.map */

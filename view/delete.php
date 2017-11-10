@@ -11,12 +11,12 @@
 
 <body>
 
-    <form action="../model/delete.php" method="post">
+    <form action="../controleur/delete.php" method="post">
         <p>Nom tâche <input type="text" name="nom" /></p>
         <p><input type="submit" value="OK" name="submit"></p>
     </form>
     
-     <a href="../controleur/browse.php">Retour à l'index</a>
+    <a href="../controleur/browse.php">Retour à l'index</a>
 
 </body>
 

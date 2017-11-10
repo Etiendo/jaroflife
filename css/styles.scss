@@ -2,8 +2,16 @@
     font-family: 'Inconsolata', monospace;
 }
 
-h1 {
+@mixin header {
     height: 200px;
     vertical-align: middle;
- 
+    margin: 20px;
+}
+
+.espace_perso {
+    @include header;
+}
+
+.accueil {
+    @include header;
 }

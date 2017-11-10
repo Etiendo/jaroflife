@@ -2,34 +2,38 @@
 
 //lien vers la base de données
 
-require '../config.php';
+function editTasks($nom, $description, $id) {
 
-// on définit la variable $id avec l'id récupérée dans view/browse.php
-$id = $_GET["id"];
+    require '../config.php';
 
-try
-{
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} 
-catch (PDOException $e) {
-      echo 'Connexion échouée : ' . $e->getMessage();   
-}
+    try
+    {
+        $pdo = new PDO($dsn, $user, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } 
+    catch (PDOException $e) {
+          echo 'Connexion échouée : ' . $e->getMessage();   
+    }
 
-if (isset($_POST["submit"])) {
-    
-    $newnom = $_POST['newnom'];
-    $newdescriptiontache = $_POST['newdescriptiontache'];
-    
     try {
-        $sql = "UPDATE Tache SET labeltache = '$newnom', description = '$newdescriptiontache' WHERE tacheid = '$id'";
+        // on définit la variable $id avec l'id récupérée dans view/browse.php
+    //$id = $userid;
+        
+            // on remplace les $_POST par des variables déclarées dans le controleur
+    //$newnom = $nom;
+    //$newdescriptiontache = $description;
+        
+        $sql = "UPDATE Tache SET labeltache = '$nom', description = '$description' WHERE tacheid = '$id'";
         
         $statement = $pdo->prepare($sql) ;
                  if ($statement->execute() === TRUE) {
+                     
             echo "Modification effectuée !";
         } else {
             echo "Modification non effectuée";
         }
+        
+        return $statement;
         }
         
         

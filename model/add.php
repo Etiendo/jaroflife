@@ -2,6 +2,8 @@
 
 //lien vers la base de données
 
+function addTasks($nom, $description, $userid) {
+
 require '../config.php';
 
 try
@@ -11,29 +13,24 @@ try
     } catch (PDOException $e) {
       echo 'Connexion échouée : ' . $e->getMessage();   
 }
-
-if (isset($_POST["submit"])) {
     
     try {
         $sql = 'INSERT INTO Tache (labeltache, description, user_id) VALUES (:nomtache, :dotache, :userid)';
         $statement = $pdo->prepare($sql);
         
-        $statement->bindParam(':nomtache', $_POST['nom']);
-        $statement->bindParam(':dotache', $_POST['descriptiontache']);
-        $statement->bindParam(':userid', $_POST['userid']);
+        $statement->bindParam(':nomtache', $nom);
+        $statement->bindParam(':dotache', $description);
+        $statement->bindParam(':userid', $userid);
         
-            if ($statement->execute() === TRUE) {
+            if ($statement->execute() === TRUE) {  
             echo "Tâche ajoutée !";
         } else {
             echo "Ajout non effectué";
         }
         
-    }
+        return $statement;
         
-        
-        
-        
-        
+    }      
         
  catch (PDOException $e) {
     echo 'Connexion échouée : ' . $e->getMessage();
