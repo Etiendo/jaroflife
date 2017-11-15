@@ -21,7 +21,7 @@
 
 <body>
     <div class="container">
-        <form action="controleur/login.php" method="post">
+        <form action="index.php" method="post">
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4">
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4">
-                    <input type="submit" value="Connexion">
+                    <input type="submit" value="Connexion" name="submit">
                 </div>
                 <div class="col-4"></div>
             </div>
