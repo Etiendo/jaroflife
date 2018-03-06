@@ -10,7 +10,10 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-4"></div>
+            <div class="col-1">
+            <a href="controleur/inscription.php">Inscription</a>
+            </div>
+            <div class="col-3"></div>
             <div class="col-4">
                 <h1 class="accueil">MyToDo List !</h1>
             </div>
